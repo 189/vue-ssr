@@ -1,12 +1,12 @@
-const fs = require('fs')
-const path = require('path')
-const LRU = require('lru-cache')
-const express = require('express')
-const favicon = require('serve-favicon')
-const compression = require('compression')
-const microcache = require('route-cache')
-const resolve = file => path.resolve(__dirname, file)
-const {createBundleRenderer} = require('vue-server-renderer')
+const fs = require('fs');
+const path = require('path');
+const LRU = require('lru-cache');
+const express = require('express');
+const favicon = require('serve-favicon');
+const compression = require('compression');
+const microcache = require('route-cache');
+const resolve = file => path.resolve(__dirname, file);
+const {createBundleRenderer} = require('vue-server-renderer');
 const axios = require('axios');
 const websiteConfig = require('./src/config/website');
 
@@ -33,8 +33,8 @@ function createRenderer(bundle, options) {
     }))
 }
 
-let renderer
-let readyPromise
+let renderer;
+let readyPromise;
 const templatePath = resolve('./src/index.template.html')
 if (isProd) {
     // In production: create server renderer using template and built server bundle.
